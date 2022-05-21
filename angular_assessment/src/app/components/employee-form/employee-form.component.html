@@ -1,0 +1,146 @@
+<div class="container-flex">
+  <div class="form-container" style="padding: 1rem">
+    <div *ngIf="updateEmployeeSwitch == false; else editEmployeeForm">
+      <h3>Create a New Employee 💼</h3>
+      <form (ngSubmit)="saveEmployee(newEmployeeForm)" #newEmployeeForm="ngForm">
+        <label for="firstName" class="form-label">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="First Name"
+          id="firstName"
+          name="firstName"
+          minlength="2"
+          required
+          ngModel
+        />
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Last Name"
+          id="lastName"
+          name="lastName"
+          minlength="2"
+          required
+          ngModel
+        />
+        <label for="salary" class="form-label">Salary</label>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="$50,000"
+          id="salary"
+          name="salary"
+          minlength="5"
+          required
+          ngModel
+        />
+        <label for="state" class="form-label">State</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="State"
+          id="state"
+          name="state"
+          minlength="2"
+          required
+          ngModel
+        />
+        <label for="country" class="form-label">Country</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Country"
+          id="country"
+          name="country"
+          minlength="2"
+          required
+          ngModel
+        />
+        <div style="text-align: center">
+          <button class="btn btn-primary" type="submit" [disabled]="!newEmployeeForm.valid">Submit</button>
+        </div>
+      </form>
+      <button class="btn btn-primary btn-sm" (click)="setUpdateEmployeeSwitch()">Clear</button>
+    </div>
+    <ng-template #editEmployeeForm>
+      <div>
+        <h3>
+          Edit {{ employeeToEdit.firstName }} {{ employeeToEdit.lastName }} ✏️
+        </h3>
+        <form
+          (ngSubmit)="updateEmployee(updateEmployeeForm, employeeToEdit.id)"
+          #updateEmployeeForm="ngForm"
+        >
+          <input
+            type="hidden"
+            class="form-control"
+            value="{{ employeeToEdit.id }}"
+            name="id"
+            ngModel
+          />
+          <label for="firstName" class="form-label">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="{{ employeeToEdit.firstName }}"
+            id="firstName"
+            name="firstName"
+            minlength="2"
+            required
+            ngModel
+          />
+          <label for="lastName" class="form-label">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="{{ employeeToEdit.lastName }}"
+            id="lastName"
+            name="lastName"
+            minlength="2"
+            required
+            ngModel
+          />
+          <label for="salary" class="form-label">Salary</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="{{ employeeToEdit.salary }}"
+            id="salary"
+            name="salary"
+            minlength="5"
+            required
+            ngModel
+          />
+          <label for="state" class="form-label">State</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="{{ employeeToEdit.state }}"
+            id="state"
+            name="state"
+            minlength="2"
+            required
+            ngModel
+          />
+          <label for="country" class="form-label">Country</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="{{ employeeToEdit.country }}"
+            id="country"
+            name="country"
+            minlength="2"
+            required
+            ngModel
+          />
+          <div style="text-align: center">
+            <button class="btn btn-primary" type="submit" [disabled]="!updateEmployeeForm.valid">Submit</button>
+          </div>
+        </form>
+      </div>
+      <button class="btn btn-primary btn-sm" (click)="setUpdateEmployeeSwitch()">Clear</button>
+    </ng-template>
+  </div>
+</div>

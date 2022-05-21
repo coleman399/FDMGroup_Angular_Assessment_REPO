@@ -1,0 +1,9 @@
+input {
+  margin-bottom: 0.5rem;
+}
+
+.form-container {
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  overflow: auto;
+  max-height: 60vh;
+}

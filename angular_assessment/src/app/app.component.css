@@ -1,0 +1,34 @@
+.center-box {
+  border: 0.25rem solid;
+  border-color: #166ec0;
+  border-radius: 10px;
+  display: block;
+  padding: 1.5rem;
+  background-color: #0f345250;
+  width: 75%;
+  height: 75%;
+  margin: auto;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-image {
+  background-image: url("../assets/AdobeStock_132614535_Preview.jpeg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+}
+
+.emp-container {
+  background-color: rgb(235, 239, 243);
+  border-radius: 5px;
+  min-height: inherit;
+}

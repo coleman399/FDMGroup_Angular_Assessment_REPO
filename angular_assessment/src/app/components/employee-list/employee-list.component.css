@@ -1,0 +1,24 @@
+.table-container {
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  text-align: center;
+  overflow: y-scroll;
+  max-height: 62vh;
+}
+
+i:hover {
+  color: #166ec0;
+}
+
+i {
+  font-size: 30px;
+  font-size: large;
+  font-size: 125%;
+}
+
+#deleteEmployeeIcon:hover {
+  color: red;
+}
+
+tbody {
+  white-space: nowrap;
+}

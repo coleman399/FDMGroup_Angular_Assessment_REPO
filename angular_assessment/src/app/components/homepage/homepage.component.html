@@ -1,0 +1,48 @@
+<div class="bg-image">
+  <div class="container">
+    <div class="center-box">
+      <div class="row" style="margin-top: 3vh">
+        <div class="col-6">
+          <br>
+          <div class="container">
+            <div class="container-fluid">
+              <div class="emp-container">
+                <app-employee-form
+                  (updateEmployeeEmitter)="setUpdateEmployeeSwitch($event)"
+                  (updatedDataEmitter)="setUpdateDataSwitch($event)"
+                  [employeeToEdit]="employeeToEdit"
+                  [updateEmployeeSwitch]="updateEmployeeSwitch"
+                  [updateDataSwitch]="updateDataSwitch"
+                ></app-employee-form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div
+            class="container"
+            style="align-items: center; justify-content: center"
+          >
+            <div class="emp-container">
+              <div class="table-responsive">
+                <div class="row">
+                  <div class="col"></div>
+                  <div class="col">
+                    <app-employee-list
+                      (employeeEmitter)="editEmployee($event)"
+                      (updateEmployeeEmitter)="setUpdateEmployeeSwitch($event)"
+                      (updatedDataEmitter)="setUpdateDataSwitch($event)"
+                      [updateDataSwitch]="updateDataSwitch"
+                      [updateEmployeeSwitch]="updateEmployeeSwitch"
+                    ></app-employee-list>
+                  </div>
+                  <div class="col"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

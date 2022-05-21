@@ -1,0 +1,16 @@
+.bg-image {
+  background-image: url("../../../assets/404PageNotFound.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+}
+
+.pnfwarning {
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  text-align: center;
+}
